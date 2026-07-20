@@ -28,33 +28,8 @@ describe('Login spec', () => {
   });
 
   it('harus berhasil login dan diarahkan ke halaman utama ketika kredensial benar', () => {
-    cy.intercept('POST', '**/login', {
-      statusCode: 200,
-      body: {
-        status: 'success',
-        message: 'Login sukses',
-        data: { token: 'token-bohongan-untuk-ci' }
-      }
-    }).as('loginMock');
-
-    cy.intercept('GET', '**/users/me', {
-      statusCode: 200,
-      body: {
-        status: 'success',
-        message: 'OK',
-        data: {
-          user: {
-            id: 'user-1',
-            name: 'Penguji Dicoding',
-            email: 'penguji@dicoding.com',
-            avatar: 'https://ui-avatars.com/api/?name=Penguji'
-          }
-        }
-      }
-    }).as('userMock');
-
-    cy.get('input[placeholder="Email"]').type('asal@gmail.com');
-    cy.get('input[placeholder="Password"]').type('asal123');
+    cy.get('input[placeholder="Email"]').type('nadiaerfina16@gamil.com');
+    cy.get('input[placeholder="Password"]').type('password');
     cy.get('button').contains('Masuk').click();
 
     cy.get('input[placeholder="Email"]', { timeout: 10000 }).should('not.exist');
