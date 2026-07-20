@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
@@ -30,5 +30,6 @@ jobs:
       - name: Run E2E Testing
         uses: cypress-io/github-action@v6
         with:
+         install: false
           start: npm run dev
           wait-on: 'http://localhost:5173'
