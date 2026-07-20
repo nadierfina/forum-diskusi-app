@@ -28,8 +28,8 @@ describe('Login spec', () => {
   });
 
   it('harus berhasil login dan diarahkan ke halaman utama ketika kredensial benar', () => {
-    cy.get('input[placeholder="Email"]').type('nadiaerfina16@gmail.com');
-    cy.get('input[placeholder="Password"]').type('password');
+    cy.get('input[placeholder="Email"]').type('testingcinadia@dicoding.com');
+    cy.get('input[placeholder="Password"]').type('password123');
     cy.get('button').contains('Masuk').click();
     cy.get('input[placeholder="Email"]', { timeout: 10000 }).should('not.exist');
   });
