@@ -30,6 +30,6 @@ jobs:
       - name: Run E2E Testing
         uses: cypress-io/github-action@v6
         with:
-         install: false
+          install: false
           start: npm run dev
           wait-on: 'http://localhost:5173'
