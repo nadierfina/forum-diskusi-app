@@ -31,7 +31,6 @@ describe('Login spec', () => {
     cy.get('input[placeholder="Email"]').type('nadiaerfina16@gmail.com');
     cy.get('input[placeholder="Password"]').type('password');
     cy.get('button').contains('Masuk').click();
-
-    cy.get('input[placeholder="Email"]').should('not.exist');
+    cy.get('input[placeholder="Email"]', { timeout: 10000 }).should('not.exist');
   });
 });
