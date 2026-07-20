@@ -7,7 +7,7 @@
  *   - harus menampilkan pesan error ketika email atau password salah
  *   - harus berhasil login dan diarahkan ke halaman utama ketika kredensial benar
  */
-
+// komentar kosong untuk memancing vercel
 describe('Login spec', () => {
   beforeEach(() => {
     cy.visit('http://localhost:5173/login');
