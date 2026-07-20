@@ -7,7 +7,6 @@
  *   - harus menampilkan pesan error ketika email atau password salah
  *   - harus berhasil login dan diarahkan ke halaman utama ketika kredensial benar
  */
-// komentar kosong untuk memancing vercel
 describe('Login spec', () => {
   beforeEach(() => {
     cy.visit('http://localhost:5173/login');
@@ -22,7 +21,7 @@ describe('Login spec', () => {
   it('harus menampilkan pesan error ketika email atau password salah', () => {
     cy.get('input[placeholder="Email"]').type('akunsalah@dicoding.com');
     cy.get('input[placeholder="Password"]').type('passwordsalah123');
-    cy.contains('button', 'TombolGhoib').click();
+    cy.contains('button', 'Masuk').click();
     cy.on('window:alert', (text) => {
       expect(text).to.contains('email or password is wrong');
     });
