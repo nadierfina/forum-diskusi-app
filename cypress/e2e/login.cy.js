@@ -22,8 +22,7 @@ describe('Login spec', () => {
   it('harus menampilkan pesan error ketika email atau password salah', () => {
     cy.get('input[placeholder="Email"]').type('akunsalah@dicoding.com');
     cy.get('input[placeholder="Password"]').type('passwordsalah123');
-    cy.get('button').contains('Masuk').click();
-
+    cy.contains('button', 'TombolGhoib').click();
     cy.on('window:alert', (text) => {
       expect(text).to.contains('email or password is wrong');
     });
